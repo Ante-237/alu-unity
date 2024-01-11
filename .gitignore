@@ -9,9 +9,9 @@ unity_concepts/[Bb]uild/
 unity_concepts/[Bb]uilds/
 unity_concepts/[Ll]ogs/
 unity_concepts/[Uu]ser[Ss]ettings/
-unity_concepts/[Pp]rojectSettings*
+# unity_concepts/[Pp]rojectSettings*
 unity_concepts/Assets/[Ss]ettings*
-unity_concepts/[Pp]ackages*
+# unity_concepts/[Pp]ackages*
 unity_concepts/Assets/UniversalRender*
 
 # MemoryCaptures can get excessive in size.
