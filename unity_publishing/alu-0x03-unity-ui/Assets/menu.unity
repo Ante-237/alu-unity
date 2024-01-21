@@ -2187,9 +2187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d232c73002ded4c91e08785f25437e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapMat: {fileID: 0}
-  goalMat: {fileID: 0}
-  colorblindMode: {fileID: 0}
+  trapMat: {fileID: 2100000, guid: 71e7064a95b41494cad695e77bc5f344, type: 2}
+  goalMat: {fileID: 2100000, guid: 64dbfac0b166c824286d259b77f884cc, type: 2}
+  colorblindMode: {fileID: 1108096826}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
