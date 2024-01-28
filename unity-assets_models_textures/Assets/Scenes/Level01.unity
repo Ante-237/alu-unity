@@ -322,6 +322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb984e6eb464b04f99b6b7adca46468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpForce: 200
+  MovementSpeed: 500
 --- !u!4 &134144939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 104440827767265100, guid: d82fdc1ade032b54586bebaca4430154,
@@ -1676,6 +1678,7 @@ GameObject:
   - component: {fileID: 1605037652}
   - component: {fileID: 1605037651}
   - component: {fileID: 1605037654}
+  - component: {fileID: 1605037655}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1801,6 +1804,19 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1605037655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605037650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719bf8dca34525b43b909d07e0b07738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 97615710}
 --- !u!1 &1768546581
 GameObject:
   m_ObjectHideFlags: 0
