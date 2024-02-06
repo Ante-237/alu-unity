@@ -1,22 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.UIElements;
+
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private GameObject Player;
-    [SerializeField] private float AngelRotation = 45f;
+    [SerializeField] private Transform Player;
+    [SerializeField] private float AngleRotation = 45f;
     
     private Vector3 DistanceApart = Vector3.zero;
+
+    private float rotationX = 0.0f;
+    private float rotationY = 0.0f;
 
 
     private void Awake()
     {
         DistanceApart =  transform.position - Player.transform.position;
     }
-
 
     private void Update()
     {
@@ -26,8 +26,18 @@ public class CameraController : MonoBehaviour
 
     void RotateAroundPlayer()
     {
-        float RotationYDirection = Input.GetAxis("Mouse X");
-        transform.RotateAround(Player.transform.position, Vector3.up, RotationYDirection * RotationYDirection);
+        rotationX += Input.GetAxis("Mouse X") * AngleRotation * Time.deltaTime;
+        rotationY -= Input.GetAxis("Mouse Y") * AngleRotation * Time.deltaTime;
+        Quaternion rotation = Quaternion.Euler(0, rotationX, 0);
+
+        transform.rotation = rotation;
+
+        transform.position = Player.position - (rotation * new Vector3(0, 0, 5));
+        
+        
+       // transform.RotateAround(Player.position, Vector3.up,   RotationYDirection * AngleRotation * Time.deltaTime);
+        transform.LookAt(Player);
+        transform.rotation = rotation;
     }
 
     void FollowPlayer()
