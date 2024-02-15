@@ -123,84 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &50539516
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_Name
-      value: Textured Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacles
-      objectReference: {fileID: 0}
-    - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e5f4d06b7a88f6c4fadc8c737b92fc84, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ec5f5ad775a8d6a479f700b8008f4954, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,16 +441,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacles
-      objectReference: {fileID: 0}
-    - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: eeddf2b6a2103c14dbc23d4796ef614d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -597,16 +509,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacles
-      objectReference: {fileID: 0}
-    - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 93a110fe0830f9645a2b1ca202297c2e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -674,11 +576,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Green Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -748,16 +645,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacles
-      objectReference: {fileID: 0}
-    - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 852e9f934a81a8c4c89a1b5ed1c0dbfb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -868,6 +755,74 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &3472791684494136178
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660157775522649266, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317513492456877817, guid: 055dac3a4ebc1d342941e98f1ac92218,
+        type: 3}
+      propertyPath: m_Name
+      value: Textured Ball
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 055dac3a4ebc1d342941e98f1ac92218, type: 3}
 --- !u!1001 &6274547878088317113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -931,16 +886,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacles
-      objectReference: {fileID: 0}
-    - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bc417509e06d93745a47ae4c29c2c465, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -958,4 +903,4 @@ SceneRoots:
   - {fileID: 1367784444}
   - {fileID: 1438113887}
   - {fileID: 827179965}
-  - {fileID: 50539516}
+  - {fileID: 3472791684494136178}
