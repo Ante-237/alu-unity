@@ -189,7 +189,7 @@ PrefabInstance:
     - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
       propertyPath: m_TagString
-      value: obstacles
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
@@ -522,7 +522,7 @@ PrefabInstance:
     - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
       propertyPath: m_TagString
-      value: obstacles
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
@@ -600,7 +600,7 @@ PrefabInstance:
     - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
       propertyPath: m_TagString
-      value: obstacles
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
@@ -678,7 +678,7 @@ PrefabInstance:
     - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
       propertyPath: m_TagString
-      value: obstacles
+      value: Obstacles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -751,7 +751,7 @@ PrefabInstance:
     - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
       propertyPath: m_TagString
-      value: obstacles
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
@@ -879,7 +879,7 @@ PrefabInstance:
     - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.36
       objectReference: {fileID: 0}
     - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
@@ -889,7 +889,7 @@ PrefabInstance:
     - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: 410159850645166441, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
@@ -934,7 +934,7 @@ PrefabInstance:
     - target: {fileID: 1949965196521406494, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
       propertyPath: m_TagString
-      value: obstacles
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 7470287286888536440, guid: ec5f5ad775a8d6a479f700b8008f4954,
         type: 3}
