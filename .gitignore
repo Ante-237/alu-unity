@@ -16,6 +16,12 @@ unity-assets_models_textures/[Bb]uild/
 unity-assets_models_textures/[Bb]uilds/
 unity-assets_models_textures/[Ll]ogs/
 
+unity-assets_ui/[Tt]emp/
+unity-assets_ui/[Oo]bj/
+unity-assets_ui/[Bb]uild/
+unity-assets_ui/[Bb]uilds/
+unity-assets_ui/[Ll]ogs/
+
 
 
 unity_concepts/[Uu]ser[Ss]ettings/
@@ -25,6 +31,11 @@ unity_concepts/Assets/[Ss]ettings*
 unity_concepts/Assets/UniversalRender*
 unity-assets_models_textures/[Ll]ibrary/
 unity-assets_models_textures/Assets/UniversalRender*
+
+
+unity-assets_ui/[Ll]ibrary/
+unity-assets_ui/Assets/UniversalRender*
+
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
