@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform Player;
     [SerializeField] private float AngleRotation = 45f;
+    public bool isInverted = false;
     
     private Vector3 DistanceApart = Vector3.zero;
 

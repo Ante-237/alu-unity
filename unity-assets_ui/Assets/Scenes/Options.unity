@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: fc9c51e1f08af3b48b0475eaef402f5d, type: 2}
+  RotationInverstion: {fileID: 2003244632}
 --- !u!1 &268558074
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,6 +51,8 @@ namespace StarterAssets
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
 
+		public SettingsSO settings;
+
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -136,15 +138,31 @@ namespace StarterAssets
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+
 				
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
+                _cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
+              
+
+			
+                _rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
+				
+                 
+                
+				
 
 				// clamp our pitch rotation
 				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
 				// Update Cinemachine camera target pitch
-				CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+				if (settings.isInverted)
+				{
+                    CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(-_cinemachineTargetPitch, 0.0f, 0.0f);
+				}
+				else
+				{
+                    CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+                }
+				
 
 				// rotate the player left and right
 				transform.Rotate(Vector3.up * _rotationVelocity);

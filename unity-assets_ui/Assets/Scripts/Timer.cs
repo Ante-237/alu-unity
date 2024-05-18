@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-   public TextMeshProUGUI TimerText;
+   public Text TimerText;
+   public SettingsSO settings;
 
    public bool isStarted = false;
+   public float seconds = 0f;
 
    private void Update()
    {
@@ -21,9 +24,9 @@ public class Timer : MonoBehaviour
 
    private void UpdateTimer()
    {
-      float seconds = Time.time;
+      seconds += Time.deltaTime;
       int hours = (int)seconds / 60;
-      TimerText.text = hours + ":" + seconds.ToString("00.00");
+      TimerText.text =  hours + ":" + seconds.ToString("00.00");
    }
 
    public void ChangeToGreen()
@@ -33,6 +36,17 @@ public class Timer : MonoBehaviour
 
    private void OnTriggerEnter(Collider other)
    {
-      isStarted = true;
+        if (settings.optionsActivated)
+        {
+            isStarted = false;
+           
+            int hours = (int)settings.CurrentTime / 60;
+            TimerText.text = hours + ":" + settings.CurrentTime.ToString("00.00");
+        }
+        else
+        {
+            isStarted = true;
+        }
+    
    }
 }

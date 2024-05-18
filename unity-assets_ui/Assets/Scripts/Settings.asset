@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b8e010f075de142a7f2e8f305aa0cc, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  PreviousScene: 3
+  PreviousScene: 4
+  optionsActivated: 1
+  CurrentTime: 15.269567
+  PlayerPosition: {x: 26.96, y: -8.45, z: 36.84}
+  isInverted: 1
