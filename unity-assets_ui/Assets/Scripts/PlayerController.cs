@@ -1,14 +1,11 @@
-
-
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody rb;
-    [SerializeField] private float JumpForce = 300f;
-    [SerializeField] private float MovementSpeed = 20f;
+   // [SerializeField] private float JumpForce = 300f;
+   // [SerializeField] private float MovementSpeed = 20f;
     [SerializeField] private Transform cameraPosition;
     private Vector3 vertical;
     private Vector3 horizontal;
@@ -17,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 InitialPosition;
 
 
-    public CharacterController controller;
+   // public CharacterController controller;
     private void Awake()
     {
         InitialPosition = transform.position;
@@ -25,15 +22,15 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        controller = GetComponent<CharacterController>();
+      //  rb = GetComponent<Rigidbody>();
+    //    controller = GetComponent<CharacterController>();
 
     }
 
     void Update()
     {
-        Movements();
-        Jumping();
+       // Movements();
+       // Jumping();
         CheckFalling();
     }
 
@@ -43,11 +40,13 @@ public class PlayerController : MonoBehaviour
     void CheckFalling()
     {
         Vector3 spaceGap = new Vector3(0, 3, 0);
-        if (transform.position.y < -3f)
+        if (transform.position.y < -15f)
         {
             transform.position = InitialPosition +  spaceGap;
         }
     }
+
+    /*
     
 /// <summary>
 /// player jumps when space is pressed
@@ -83,5 +82,5 @@ public class PlayerController : MonoBehaviour
         //transform.position += movements;
         rb.AddForce( movements * (Time.deltaTime * MovementSpeed));
     }
-
+    */
 }
