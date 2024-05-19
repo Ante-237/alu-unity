@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Settings
   m_EditorClassIdentifier: 
   PreviousScene: 4
-  optionsActivated: 1
-  CurrentTime: 15.269567
-  PlayerPosition: {x: 26.96, y: -8.45, z: 36.84}
-  isInverted: 1
+  optionsActivated: 0
+  CurrentTime: 0
+  PlayerPosition: {x: 0, y: 0, z: 0}
+  isInverted: 0

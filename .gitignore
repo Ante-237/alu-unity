@@ -2,7 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-unity_concepts/[Ll]ibrary/
+unity_concepts/[Ll]ibrary/*
 unity_concepts/[Tt]emp/
 unity_concepts/[Oo]bj/
 unity_concepts/[Bb]uild/
@@ -21,6 +21,7 @@ unity-assets_ui/[Oo]bj/
 unity-assets_ui/[Bb]uild/
 unity-assets_ui/[Bb]uilds/
 unity-assets_ui/[Ll]ogs/
+unity-assets_ui/[Ll]ibrary/*
 
 
 
@@ -29,6 +30,7 @@ unity-animation/[Oo]bj/
 unity-animation/[Bb]uild/
 unity-animation/[Bb]uilds/
 unity-animation/[Ll]ogs/
+unity-animation/[Ll]ibrary/*
 
 
 
