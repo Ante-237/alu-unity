@@ -52,6 +52,8 @@ namespace StarterAssets
 		public float BottomClamp = -90.0f;
 
 		public SettingsSO settings;
+		public Animator TyAnimator;
+		public Transform ResetPoint;
 
 		// cinemachine
 		private float _cinemachineTargetPitch;
@@ -110,6 +112,7 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+			
 		}
 
 		private void Update()
@@ -117,6 +120,27 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			ResetPosition();
+		}
+
+		private void ResetPosition()
+		{
+			if (transform.position.y < -10.0f)
+			{
+				// transform.position = new Vector3(transform.position.x, transform.position.y + 20, transform.position.z);
+				transform.position = ResetPoint.position;
+                TyAnimator.SetBool("IdleToRunning", true);
+                TyAnimator.SetBool("RunningToFalling", true);
+				
+			}
+
+			if (transform.position.y > 4f && transform.position.y < 10f)
+			{
+				TyAnimator.SetBool("RunningToFalling", false);	
+				TyAnimator.SetBool("FallingToImpact", true );
+				TyAnimator.SetBool("ImpactToGettingUp", true );
+				TyAnimator.SetBool("Default", true);
+			}
 		}
 
 		private void LateUpdate()
@@ -211,10 +235,23 @@ namespace StarterAssets
 				// move
 				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
 			}
+			// set animatioan to moving.
+			TyAnimator.SetInteger("IdleToRunning", (int)_input.move.x);
+			TyAnimator.SetInteger("RunningToIdle", (int)_input.move.x);
+			TyAnimator.SetBool("RunningToJump", false);
 
-			// move the player
-			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
-		}
+			TyAnimator.SetInteger("IdleToRunning", (int)_input.move.y);
+            TyAnimator.SetInteger("RunningToIdle", (int)_input.move.y);
+
+
+
+            // move the player
+            _controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+          
+
+
+        }
 
 		private void JumpAndGravity()
 		{
@@ -234,13 +271,19 @@ namespace StarterAssets
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-				}
+                    TyAnimator.SetBool("RunningToJump", true);
+                    TyAnimator.SetBool("IdleToJump", true);
+                }
 
 				// jump timeout
 				if (_jumpTimeoutDelta >= 0.0f)
 				{
 					_jumpTimeoutDelta -= Time.deltaTime;
 				}
+
+				// set jumping animation here
+				
+
 			}
 			else
 			{
@@ -255,6 +298,8 @@ namespace StarterAssets
 
 				// if we are not grounded, do not jump
 				_input.jump = false;
+				TyAnimator.SetBool("JumpToIdle", true);
+				TyAnimator.SetBool("IdleToJump", false);
 			}
 
 			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
@@ -262,6 +307,9 @@ namespace StarterAssets
 			{
 				_verticalVelocity += Gravity * Time.deltaTime;
 			}
+
+			// TyAnimator.SetBool("RunningToJump", false);
+			// TyAnimator.SetBool("IdleToJump", false);
 		}
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)

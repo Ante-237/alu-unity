@@ -58,6 +58,7 @@ namespace StarterAssets
 
 		public void JumpInput(bool newJumpState)
 		{
+
 			jump = newJumpState;
 		}
 

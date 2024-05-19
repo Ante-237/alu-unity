@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4699641012378024024}
   - component: {fileID: 8626880339211651457}
   - component: {fileID: 1796185261045111623}
-  - component: {fileID: 7368215953603009974}
   m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
@@ -109,33 +108,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7368215953603009974
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72931161851561897}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &218061707790241969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,6 +2639,7 @@ MonoBehaviour:
   TopClamp: 89
   BottomClamp: -89
   settings: {fileID: 11400000, guid: fc9c51e1f08af3b48b0475eaef402f5d, type: 2}
+  TyAnimator: {fileID: 0}
 --- !u!114 &4161000646025516170
 MonoBehaviour:
   m_ObjectHideFlags: 0
