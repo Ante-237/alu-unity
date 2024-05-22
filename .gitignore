@@ -33,6 +33,14 @@ unity-animation/[Ll]ogs/
 unity-animation/[Ll]ibrary/*
 
 
+unity-audio/[Tt]emp/
+unity-audio/[Oo]bj/
+unity-audio/[Bb]uild/
+unity-audio/[Bb]uilds/
+unity-audio/[Ll]ogs/
+unity-audio/[Ll]ibrary/*
+
+
 
 unity_concepts/[Uu]ser[Ss]ettings/
 # unity_concepts/[Pp]rojectSettings*
