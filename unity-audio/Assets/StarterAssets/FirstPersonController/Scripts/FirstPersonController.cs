@@ -54,6 +54,8 @@ namespace StarterAssets
 		public SettingsSO settings;
 		public Animator TyAnimator;
 		public Transform ResetPoint;
+		// player walking audio source
+		public AudioSource WalkingAudioSource;
 
 		// cinemachine
 		private float _cinemachineTargetPitch;
@@ -193,6 +195,8 @@ namespace StarterAssets
 			}
 		}
 
+		private bool canRun = false;
+
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
@@ -234,7 +238,20 @@ namespace StarterAssets
 			{
 				// move
 				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
+			
+				// set move sound to play here
 			}
+			else
+			{
+				//WalkingAudioSource.Stop();
+            }
+
+			if(canRun)
+			{
+				//WalkingAudioSource.Play();
+			//	canRun = false;
+			}
+
 			// set animatioan to moving.
 			TyAnimator.SetInteger("IdleToRunning", (int)_input.move.x);
 			TyAnimator.SetInteger("RunningToIdle", (int)_input.move.x);
@@ -259,6 +276,7 @@ namespace StarterAssets
 			{
 				// reset the fall timeout timer
 				_fallTimeoutDelta = FallTimeout;
+				
 
 				// stop our velocity dropping infinitely when grounded
 				if (_verticalVelocity < 0.0f)
@@ -273,6 +291,9 @@ namespace StarterAssets
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
                     TyAnimator.SetBool("RunningToJump", true);
                     TyAnimator.SetBool("IdleToJump", true);
+					
+					// set the audiosource to stop playing
+					WalkingAudioSource.Stop();
                 }
 
 				// jump timeout
