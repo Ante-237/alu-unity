@@ -11,6 +11,7 @@ public class WinTrigger : MonoBehaviour
     public GameObject DefaultTime;
     public Text MenuTime;
     public AudioSource BackGroudAudioSource;
+    public AudioSource VictoryAudioSource;
 
 
     private void Start()
@@ -26,5 +27,6 @@ public class WinTrigger : MonoBehaviour
         WinCanvas.SetActive(true);
         timer.ChangeToGreen();
         BackGroudAudioSource.Stop();
+        VictoryAudioSource.Play();
     }
 }

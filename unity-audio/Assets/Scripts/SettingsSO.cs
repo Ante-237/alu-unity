@@ -6,7 +6,7 @@ using UnityEngine;
 public class SettingsSO : ScriptableObject
 {
 
-    public int PreviousScene = 4;
+    public int PreviousScene = 0;
     public bool optionsActivated = false;
     public float CurrentTime = 0f;
     public Vector3 PlayerPosition = Vector3.zero;

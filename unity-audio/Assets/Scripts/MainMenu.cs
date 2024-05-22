@@ -10,15 +10,15 @@ public class MainMenu : MonoBehaviour
 
     public void LevelSelect(int level)
     {
-        settings.PreviousScene = 4;
+        settings.PreviousScene = 0;
         SceneManager.LoadScene(level);
         
     }
 
     public void Options()
     {
-        settings.PreviousScene = 4;
-        SceneManager.LoadScene(3);
+        settings.PreviousScene = 0;
+        SceneManager.LoadScene(1);
 
     }
 

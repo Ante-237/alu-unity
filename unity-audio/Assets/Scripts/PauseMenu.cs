@@ -1,6 +1,7 @@
 using StarterAssets;
 using System.Dynamic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -10,6 +11,9 @@ public class PauseMenu : MonoBehaviour
     public SettingsSO settings;
     public GameObject Player;
     public StarterAssetsInputs starter;
+    public AudioMixer mixer;
+    public AudioMixerSnapshot[] snapshots;
+    private float[] snapshotRatio = { 0, 1 };
 
 
 
@@ -33,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
+            
         }
 
         
@@ -43,17 +48,20 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         UITimer.isStarted = false;   
         PauseCanvas.SetActive(true);
+        mixer.TransitionToSnapshots(snapshots, snapshotRatio, 0.1f); 
     }
 
     public void Resume()
     {
         Cursor.lockState = CursorLockMode.Locked;
         UITimer.isStarted = true;
+        DefaultMixer();
         PauseCanvas.SetActive(false);
     }
 
     public void Restart()
     {
+        DefaultMixer();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         UITimer.seconds = 0.0f;
         settings.optionsActivated = false;
@@ -61,9 +69,15 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        DefaultMixer();
         settings.optionsActivated = false;
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
 
+    }
+
+    private void DefaultMixer()
+    {
+        mixer.TransitionToSnapshots(snapshots, new float[] { 1, 0 }, 0.1f); 
     }
 
     public void Options()
@@ -75,7 +89,7 @@ public class PauseMenu : MonoBehaviour
         settings.PreviousScene = SceneManager.GetActiveScene().buildIndex;
 
         UITimer.isStarted = false;
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
         PauseCanvas.SetActive(false);
     }
 

@@ -7,15 +7,15 @@ public class WinMenu : MonoBehaviour
 {
     public void MainMenu()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
     }
 
     public void Next()
     {
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentIndex > 2)
+        if (currentIndex < 2)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(0);
             return;
         }
 
