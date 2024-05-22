@@ -10,6 +10,7 @@ public class WinTrigger : MonoBehaviour
     public GameObject WinCanvas;
     public GameObject DefaultTime;
     public Text MenuTime;
+    public AudioSource BackGroudAudioSource;
 
 
     private void Start()
@@ -24,5 +25,6 @@ public class WinTrigger : MonoBehaviour
         MenuTime.text = timer.seconds.ToString("00:00.00");
         WinCanvas.SetActive(true);
         timer.ChangeToGreen();
+        BackGroudAudioSource.Stop();
     }
 }

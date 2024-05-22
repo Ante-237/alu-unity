@@ -7,9 +7,13 @@ public class ClickSoundPlaying : MonoBehaviour
 {
     public Animator PlayerAnimator;
     public AudioSource RunningAudioSource;
+    public AudioSource LandingAudioSource;
 
     public AudioClip SandClip;
     public AudioClip GrassClip;
+
+    public AudioClip LandingSandClip;
+    public AudioClip LandingGrassClip;
 
     private bool firstPlaying = false;
 
@@ -32,27 +36,15 @@ public class ClickSoundPlaying : MonoBehaviour
             
     }
 
+    public void Fallen()
+    {
+        LandingAudioSource.Play();
+    }
+
     public void Update()
     {
         PlaySoundEffect();
     }
-
-
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.LogWarning("Tghe collision method is running");
-
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            RunningAudioSource.clip = SandClip;
-        }
-        else
-        {
-            RunningAudioSource.clip = GrassClip;
-        }
-    }
-    */
 
     private void OnTriggerEnter(Collider other)
     {
@@ -61,11 +53,13 @@ public class ClickSoundPlaying : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             RunningAudioSource.clip = SandClip;
+            LandingAudioSource.clip = LandingSandClip;  
         }
 
         if (other.gameObject.CompareTag("GroundGrass"))
         {
             RunningAudioSource.clip = GrassClip;
+            LandingAudioSource.clip = LandingGrassClip;
         }
 
     }
