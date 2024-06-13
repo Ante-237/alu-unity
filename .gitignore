@@ -2,7 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-unity_concepts/[Ll]ibrary/*
+unity_concepts/[Ll]ibrary/
 unity_concepts/[Tt]emp/
 unity_concepts/[Oo]bj/
 unity_concepts/[Bb]uild/
@@ -21,25 +21,17 @@ unity-assets_ui/[Oo]bj/
 unity-assets_ui/[Bb]uild/
 unity-assets_ui/[Bb]uilds/
 unity-assets_ui/[Ll]ogs/
-unity-assets_ui/[Ll]ibrary/*
 
-
-
-unity-animation/[Tt]emp/
-unity-animation/[Oo]bj/
-unity-animation/[Bb]uild/
-unity-animation/[Bb]uilds/
-unity-animation/[Ll]ogs/
-unity-animation/[Ll]ibrary/*
-
-
-unity-audio/[Tt]emp/
-unity-audio/[Oo]bj/
-unity-audio/[Bb]uild/
-unity-audio/[Bb]uilds/
-unity-audio/[Ll]ogs/
-unity-audio/[Ll]ibrary/*
-
+unity_ar_business_card/[Tt]emp/
+unity_ar_business_card/[Oo]bj/
+unity_ar_business_card/[Bb]uild/
+unity_ar_business_card/[Bb]uilds/
+unity_ar_business_card/[Ll]ogs/
+unity_ar_business_card/Assets/SamplesResources*
+unity_ar_business_card/Assets/Editor*
+unity_ar_business_card/Assets/Common
+unity_ar_business_card/Assets/TextMesh Pro*
+unity_ar_business_card/Temp*
 
 
 unity_concepts/[Uu]ser[Ss]ettings/
@@ -51,10 +43,11 @@ unity-assets_models_textures/[Ll]ibrary/
 unity-assets_models_textures/Assets/UniversalRender*
 
 
-unity-animation/[Ll]ibrary/
-unity-animation/Assets/UniversalRender*
-unity-animation/[Ll]ibrary/
-unity-animation/Assets/UniversalRender*
+unity-assets_ui/[Ll]ibrary/
+unity-assets_ui/Assets/UniversalRender*
+
+unity_ar_business_card/[Ll]ibrary/
+unity_ar_business_card/Assets/UniversalRender*
 
 
 # MemoryCaptures can get excessive in size.
