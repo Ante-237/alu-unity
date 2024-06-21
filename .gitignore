@@ -33,6 +33,19 @@ unity_ar_business_card/Assets/Common
 unity_ar_business_card/Assets/TextMesh Pro*
 unity_ar_business_card/Packages*
 
+
+unity-shadergraph/[Tt]emp/
+unity-shadergraph/[Oo]bj/
+unity-shadergraph/[Bb]uild/
+unity-shadergraph/[Bb]uilds/
+unity-shadergraph/[Ll]ogs/
+unity-shadergraph/[Ll]ibrary
+unity-shadergraph/Assets/SamplesResources*
+unity-shadergraph/Assets/Editor*
+unity-shadergraph/Assets/Common
+unity-shadergraph/Assets/TextMesh Pro*
+unity-shadergraph/Packages*
+
 unity_concepts/[Uu]ser[Ss]ettings/
 # unity_concepts/[Pp]rojectSettings*
 unity_concepts/Assets/[Ss]ettings*
