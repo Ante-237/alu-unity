@@ -46,6 +46,19 @@ unity-shadergraph/Assets/Common
 unity-shadergraph/Assets/TextMesh Pro*
 unity-shadergraph/Packages*
 
+
+slingshot/[Tt]emp/
+slingshot/[Oo]bj/
+slingshot/[Bb]uild/
+slingshot/[Bb]uilds/
+slingshot/[Ll]ogs/
+slingshot/[Ll]ibrary
+slingshot/Assets/SamplesResources*
+slingshot/Assets/Editor*
+slingshot/Assets/Common
+slingshot/Assets/TextMesh Pro*
+slingshot/Packages*
+
 unity_concepts/[Uu]ser[Ss]ettings/
 # unity_concepts/[Pp]rojectSettings*
 unity_concepts/Assets/[Ss]ettings*
