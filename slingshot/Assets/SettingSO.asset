@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9f394ac65fff34bbf3282883ef6694, type: 3}
   m_Name: SettingSO
   m_EditorClassIdentifier: 
-  FireForce: 200
+  FireForce: 100
+  MagnitudeFactor: 3.399077
   Score: 0
-  ammo: 2
+  ammo: 5
+  gameStarted: 1
+  FireDirection: {x: 0, y: 0, z: 1}

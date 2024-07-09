@@ -27,7 +27,6 @@ public class CheckPlane : MonoBehaviour
 
     List<ARRaycastHit> m_Hits = new List<ARRaycastHit>();
     NativeArray<Vector2> planeLocations = new NativeArray<Vector2>();
-    
 
     private void Start()
     {
@@ -45,12 +44,6 @@ public class CheckPlane : MonoBehaviour
         {
             return;
         }
-
-        //if (raycastManager.Raycast(Input.GetTouch(0).position, m_Hits))
-        //{
-        //    CurrentStateText.text = m_Hits.Count.ToString();
-        //    HandleRaycast(m_Hits[0]);
-        //}
     }
 
     void SubscribeToPlanesChanged()

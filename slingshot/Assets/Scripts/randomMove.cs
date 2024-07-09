@@ -32,7 +32,7 @@ public class randomMove : MonoBehaviour
         if (startMovements)
         {
             // transform.position = Vector3.MoveTowards(transform.position, new Vector3(currentData[currentIndex].x, 0f, currentData[currentIndex].y), speedRun * Time.deltaTime);
-            transform.position = Vector3.Slerp(transform.position, new Vector3(currentData[currentIndex].x * 2, 0f, currentData[currentIndex].y * 2), speedRun * Time.deltaTime);
+            transform.position = Vector3.Slerp(transform.position, new Vector3(currentData[currentIndex].x, 0f, currentData[currentIndex].y), speedRun * Time.deltaTime);
         }
 
         if(currentTime > timeDifference)
