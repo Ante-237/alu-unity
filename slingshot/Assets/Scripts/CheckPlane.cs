@@ -76,7 +76,7 @@ public class CheckPlane : MonoBehaviour
                 mainPlane = planeManager.GetPlane(plane.trackableId);
                 planeLocations = mainPlane.boundary;
                 //  CurrentStateText.text = plane.name + ": Added";
-                StartSpawnSequence();
+                // StartSpawnSequence();
                 CurrentStateText.text = planeLocations.Length.ToString();
                 ObjectCreated = true;
                 break;

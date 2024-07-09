@@ -1824,7 +1824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Play Again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3196,6 +3196,7 @@ MonoBehaviour:
   Obstacles: {fileID: 2668992677333385299, guid: d10d5bcb46b66b944b13aed45522a720,
     type: 3}
   spawnPoint: {fileID: 0}
+  StartBtn: {fileID: 0}
   raycastManager: {fileID: 1343218315}
   planeManager: {fileID: 1343218316}
 --- !u!4 &1693408696
@@ -3506,7 +3507,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1756922193}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1693408695}
+        m_TargetAssemblyTypeName: FireManager, Assembly-CSharp
+        m_MethodName: StartActualGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1756922193
 MonoBehaviour:
   m_ObjectHideFlags: 0

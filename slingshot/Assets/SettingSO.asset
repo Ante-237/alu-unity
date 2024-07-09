@@ -16,5 +16,5 @@ MonoBehaviour:
   MagnitudeFactor: 3.399077
   Score: 0
   ammo: 5
-  gameStarted: 1
+  gameStarted: 0
   FireDirection: {x: 0, y: 0, z: 1}

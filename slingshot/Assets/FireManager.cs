@@ -8,7 +8,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
-using static UnityEngine.GraphicsBuffer;
 
 public class FireManager : MonoBehaviour
 {
@@ -21,6 +20,7 @@ public class FireManager : MonoBehaviour
     public GameObject AmmoBall;
     public GameObject Obstacles;
     public Transform spawnPoint;
+    public GameObject StartBtn;
 
     private TouchControls touchControls;
     private Vector2 touchPositions;
@@ -70,29 +70,42 @@ public class FireManager : MonoBehaviour
 
         raycastManager.Raycast(touchPositions, castHits, trackableTypes: UnityEngine.XR.ARSubsystems.TrackableType.Planes);
         currentPlanePoints = planeManager.GetPlane(castHits[0].trackableId).boundary;
-        // Instantiate(AmmoBall, castHits[0].trackable.transform.position, Quaternion.identity);
-        // DebugText.text = castHits.Count.ToString();
-        StartSpawnSequence();
 
-        bulletObject = Instantiate(AmmoBall, worldCordinates, Quaternion.identity);
+        if (settings.gameStarted)
+        {
+          bulletObject = Instantiate(AmmoBall, worldCordinates, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(Obstacles, castHits[Random.Range(0, castHits.Count)].trackable.transform.position, Quaternion.identity);
+        }
+ 
+        // DebugText.text = castHits.Count.ToString();
+       
+        // StartSpawnSequence();
+
+       // bulletObject = Instantiate(AmmoBall, worldCordinates, Quaternion.identity);
         bulletObject.GetComponent<Rigidbody>().useGravity = false;
         bulletObject.GetComponent<Rigidbody>().isKinematic = true;
-
-
-        
-
     }
 
     private int runNumber = 5;
+    private bool runOnce = false;
 
     private void StartSpawnSequence()
     {
-        for (int i = 0; i < runNumber; i++)
+        if(!runOnce)
         {
-            var tempObj = Instantiate(Obstacles, new Vector3(currentPlanePoints[i].x, 0, currentPlanePoints[i].y), Quaternion.identity);
-            tempObj.GetComponent<randomMove>().SetMotion(currentPlanePoints);
-            // Debug.Log("X :" + planeLocations[i].x + " Y : " + planeLocations[i].y);
+            for (int i = 0; i < runNumber; i++)
+            {
+                var tempObj = Instantiate(Obstacles, new Vector3(currentPlanePoints[i].x, 0, currentPlanePoints[i].y), Quaternion.identity);
+                tempObj.GetComponent<randomMove>().SetMotion(currentPlanePoints);
+                // Debug.Log("X :" + planeLocations[i].x + " Y : " + planeLocations[i].y);
+            }
+
+            runOnce = true;
         }
+       
     }
 
     private void EndTouch(InputAction.CallbackContext context)
@@ -109,7 +122,8 @@ public class FireManager : MonoBehaviour
         bulletObject.GetComponent<Rigidbody>().useGravity = true;
         bulletObject.GetComponent<Rigidbody>().isKinematic = false;
         settings.MagnitudeFactor = Vector3.Distance(someCoordinates, worldCordinates) * 100;
-        bulletObject.GetComponent<Ammo>().FireBall(Vector3.forward);
+        Ray ray = new Ray();
+        bulletObject.GetComponent<Ammo>().FireBall(_camera.transform.forward);
 
     }
 
@@ -178,12 +192,14 @@ public class FireManager : MonoBehaviour
 
     public void Update()
     {
-        if (settings.gameStarted)
-        {        
-           //DebugText.text = "Game Started";         
-        }
+
     }
 
+    public void StartActualGame()
+    {
+        settings.gameStarted = true;
+        StartBtn.SetActive(false);
+    }
     public void HalfRestart()
     {
         // reset score points
@@ -197,8 +213,6 @@ public class FireManager : MonoBehaviour
         ScoreText.text = settings.Score.ToString();
         updateAmmo();
     }
-
-
     public void RestartApplication() => SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     public void ExitApplication() => Application.Quit();
 
