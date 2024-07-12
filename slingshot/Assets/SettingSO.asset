@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SettingSO
   m_EditorClassIdentifier: 
   FireForce: 100
-  MagnitudeFactor: 3.399077
+  MagnitudeFactor: 0
   Score: 0
   ammo: 5
   gameStarted: 0

@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 164355135085226006, guid: cec25213e5ba74da1ae7d3e2036e000d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4183465048131118092, guid: cec25213e5ba74da1ae7d3e2036e000d,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -89,6 +94,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1e7f6f70c50e3864789127de6b014097,
         type: 2}
+    - target: {fileID: 6343057197543294938, guid: cec25213e5ba74da1ae7d3e2036e000d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6468247973571333618, guid: cec25213e5ba74da1ae7d3e2036e000d,
         type: 3}
       propertyPath: m_UseGravity
@@ -108,6 +118,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spawnerObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190559763459483146, guid: cec25213e5ba74da1ae7d3e2036e000d,
+        type: 3}
+      propertyPath: m_TagString
+      value: obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

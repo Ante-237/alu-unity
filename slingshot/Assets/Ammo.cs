@@ -16,4 +16,20 @@ public class Ammo : MonoBehaviour
     {
         rb.AddForce(settings.FireDirection * settings.FireForce * settings.MagnitudeFactor, ForceMode.Force);
     }
+
+    private bool runOnce = false;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("obstacle"))
+        {
+            if (!runOnce)
+            {
+                settings.Score += 1;
+                runOnce = true;
+                Destroy(collision.gameObject);
+                gameObject.SetActive(false);
+            }          
+        }
+    }
 }
