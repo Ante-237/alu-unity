@@ -35,7 +35,7 @@ public class CheckPlane : MonoBehaviour
         SubscribeToPlanesChanged();
         raycastManager = GetComponent<ARRaycastManager>();
         Invoke(nameof(updateCount), 30);
-        StartBtn.onClick.AddListener(StartSpawnSequence);
+      //  StartBtn.onClick.AddListener(StartSpawnSequence);
     }
 
     private void Update()

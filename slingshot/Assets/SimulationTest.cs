@@ -71,15 +71,15 @@ public class SimulationTest : MonoBehaviour
 
     }
 
-    public void PopulateExtraSceneWithObjects()
-    {
-        // Create GameObjects for physics simulation
-        var sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        SceneManager.MoveGameObjectToScene(sphere, extraScene);
-        sphere.AddComponent<Rigidbody>();
+    //public void PopulateExtraSceneWithObjects()
+    //{
+    //    // Create GameObjects for physics simulation
+    //    var sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+    //    SceneManager.MoveGameObjectToScene(sphere, extraScene);
+    //    sphere.AddComponent<Rigidbody>();
 
-        Rigidbody rb = sphere.GetComponent<Rigidbody>();
+    //    Rigidbody rb = sphere.GetComponent<Rigidbody>();
        
-        sphere.transform.position = Vector3.up * 4;
-    }
+    //    sphere.transform.position = Vector3.up * 4;
+    //}
 }

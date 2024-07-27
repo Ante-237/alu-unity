@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using TMPro;
 using Unity.Collections;
 using UnityEngine;
@@ -49,6 +50,7 @@ public class FireManager : MonoBehaviour
 
     private Rigidbody rb;
     private PhysicsScene PhysicsScene;
+    private Vector3 objSpawnPoint;
 
     private void Awake()
     {
@@ -83,12 +85,12 @@ public class FireManager : MonoBehaviour
     {
         if(settings.ammo > 0)
         {
-            Debug.Log("Touch Started :" + touchControls.Touch.TouchPosition.ReadValue<Vector2>());
+           //  Debug.Log("Touch Started :" + touchControls.Touch.TouchPosition.ReadValue<Vector2>());
             touchPositions = touchControls.Touch.TouchPosition.ReadValue<Vector2>();
             Vector3 screenCoordinates = new Vector3(touchPositions.x, touchPositions.y, _camera.nearClipPlane);
             worldCordinates = _camera.ScreenToWorldPoint(screenCoordinates);
-            // worldCordinates.z = 0;
-            DebugText.text = worldCordinates.ToString();
+            worldCordinates.z = 0;
+          //  DebugText.text = worldCordinates.ToString();
 
             raycastManager.Raycast(touchPositions, castHits, trackableTypes: UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon);
             currentPlanePoints = planeManager.GetPlane(castHits[0].trackableId).boundary;
@@ -96,6 +98,7 @@ public class FireManager : MonoBehaviour
             if (settings.gameStarted)
             {
                 bulletObject = Instantiate(AmmoBall, worldCordinates, Quaternion.identity);
+                objSpawnPoint = bulletObject.transform.position;
             }
             else
             {
@@ -143,13 +146,13 @@ public class FireManager : MonoBehaviour
     {
         if(settings.ammo > 0)
         {
-            Debug.Log("Touch Ended :" + touchControls.Touch.TouchPosition.ReadValue<Vector2>());
+            // Debug.Log("Touch Ended :" + touchControls.Touch.TouchPosition.ReadValue<Vector2>());
             // bulletObject.GetComponent<Ammo>().FireBall((touchControls.Touch.TouchPosition.ReadValue<Vector3>() - worldCordinates).normalized);
             touchPositions = touchControls.Touch.TouchPosition.ReadValue<Vector2>();
             Vector3 screenCoordinates = new Vector3(touchPositions.x, touchPositions.y, _camera.nearClipPlane);
             someCoordinates = _camera.ScreenToWorldPoint(screenCoordinates);
-            //someCoordinates.z = 0;
-            DebugText.text = someCoordinates.ToString();
+            someCoordinates.z = 0;
+            // DebugText.text = someCoordinates.ToString();
 
             // bulletObject.GetComponent<Ammo>().FireBall(Vector3.forward);
             bulletObject.GetComponent<Rigidbody>().useGravity = true;
@@ -157,8 +160,8 @@ public class FireManager : MonoBehaviour
             settings.MagnitudeFactor = Vector3.Distance(someCoordinates, worldCordinates) * 100;
 
             DirectionFire = (someCoordinates - worldCordinates).normalized;
-            //DirectionFire.z = 1;
-
+            // DirectionFire.z = 1;
+            settings.FireDirection = _camera.transform.forward ;
             bulletObject.GetComponent<Ammo>().FireBall(DirectionFire);
             settings.ammo -= 1;
             project = false;
@@ -185,10 +188,10 @@ public class FireManager : MonoBehaviour
     public void SimulateTrajectory()
     {
         lr.positionCount = lq;
-        GameObject obj = Instantiate(Projectile, FireDirection.position, Quaternion.identity);
+        GameObject obj = Instantiate(Projectile, objSpawnPoint, Quaternion.identity);
         SceneManager.MoveGameObjectToScene(obj, extraScene);
         rb = obj.GetComponent<Rigidbody>();
-        rb.AddForce(FireDirection.forward * settings.MagnitudeFactor * settings.FireForce, ForceMode.Impulse);
+        rb.AddForce(_camera.transform.forward * settings.MagnitudeFactor * settings.FireForce, ForceMode.Impulse);
 
         for (int i = 0; i < lq; i++)
         {
@@ -200,20 +203,6 @@ public class FireManager : MonoBehaviour
 
     }
 
-    public void FixedUpdate()
-    {
-        // All of the non-default physics scenes need to be simulated manually
-        var physicsScene = extraScene.GetPhysicsScene();
-        {
-            var autoSimulation = Physics.autoSimulation;
-            Physics.autoSimulation = false;
-            Physics.autoSimulation = autoSimulation;
-        }
-        PhysicsScene = physicsScene;
-    }
-
-
-
 
     private void OnDrawGizmos()
     {
@@ -222,10 +211,19 @@ public class FireManager : MonoBehaviour
 
     private void Start()
     {
+        // All of the non-default physics scenes need to be simulated manually
+        
+
         extraScene = SceneManager.CreateScene("Scene", new CreateSceneParameters(LocalPhysicsMode.Physics3D));
         Assert.IsNotNull(raycastManager, "RayCast Manager has not been assigned");
         Assert.IsNotNull(planeManager, "Plane Manager has not been assigned");
-
+        var physicsScene = extraScene.GetPhysicsScene();
+        {
+            var autoSimulation = Physics.autoSimulation;
+            Physics.autoSimulation = false;
+            Physics.autoSimulation = autoSimulation;
+        }
+        PhysicsScene = physicsScene;
         settings.Score = 0;
         settings.ammo = 5;
    
@@ -289,12 +287,11 @@ public class FireManager : MonoBehaviour
     public void Update()
     {
 
-        //if (project)
-        //{
-        //    SimulateTrajectory();
-        //}
 
         SimulateTrajectory();
+
+
+     
 
         if(settings.Score >= 5)
         {
@@ -306,8 +303,8 @@ public class FireManager : MonoBehaviour
 
     public void StartActualGame()
     {
-        settings.gameStarted = true;
-       // StartBtn.SetActive(false);
+         settings.gameStarted = true;
+         StartBtn.SetActive(false);
     }
     public void HalfRestart()
     {
